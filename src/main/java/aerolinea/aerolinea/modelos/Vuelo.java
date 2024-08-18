@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,12 +45,17 @@ public class Vuelo {
     @Column(name = "fechallegada")
     private LocalDateTime fechaLlegada;
 
-    @JsonIgnore
+    @Column(name = "origen")
+    private String ciudadOrigen;
+
+    @Column(name = "destino")
+    private String ciudadDestino;
+
+
     @ManyToOne()
     @JoinColumn(name = "codigotripulacion",referencedColumnName = "codigotripulacion")
     private Tripulacion tripulacion;
 
-    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "codigoavion",referencedColumnName = "codigoavion")
     private Avion avion;
@@ -65,15 +68,13 @@ public class Vuelo {
     )
     private List<Pasajero> pasajeros;
 
-    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "codigociudadorigen",referencedColumnName = "codigociudad")
-    private Ciudad ciudadOrigen;
+    private Ciudad Origen;
 
-    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "codigociudaddestino",referencedColumnName = "codigociudad")
-    private Ciudad ciudadDestino;
+    private Ciudad Destino;
 
 
     

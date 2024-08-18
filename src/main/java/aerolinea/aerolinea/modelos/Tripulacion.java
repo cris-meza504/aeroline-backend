@@ -2,6 +2,8 @@ package aerolinea.aerolinea.modelos;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,6 +28,7 @@ public class Tripulacion {
 
     private String rol;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "tripulacion",cascade = CascadeType.ALL)
     private List<Vuelo> vuelos;
 

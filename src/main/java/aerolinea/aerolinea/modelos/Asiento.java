@@ -35,6 +35,7 @@ public class Asiento {
     @JoinColumn(name="codigoavion", referencedColumnName = "codigoavion")
     private Avion avion;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "asiento",cascade = CascadeType.ALL)
     private Pasajero pasajero;
 

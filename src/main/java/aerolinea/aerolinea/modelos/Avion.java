@@ -2,6 +2,8 @@ package aerolinea.aerolinea.modelos;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,9 +36,11 @@ public class Avion {
     @OneToMany(mappedBy = "avion", cascade = CascadeType.ALL)
     private List<Mantenimiento> mantenimientos;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "avion", cascade = CascadeType.ALL)
     private List<Vuelo> vuelos;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "avion",cascade = CascadeType.ALL)
     private List<Pasajero> pasajeros;
 

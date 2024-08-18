@@ -2,6 +2,8 @@ package aerolinea.aerolinea.modelos;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,9 +28,11 @@ public class Ciudad {
 
     private String pais;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "ciudadOrigen",cascade = CascadeType.ALL)
     private List<Vuelo> vuelosOrigen;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "ciudadDestino",cascade = CascadeType.ALL)
     private List<Vuelo> vuelosDestino;
 

@@ -30,6 +30,15 @@ public class Pasajero {
 
     private String nombre;
 
+    private String apellido;
+
+    private String correo;
+
+    @Column(name = "contraseña")
+    private String contranna;
+
+    private String telefono;
+
     @Column(name = "documentoidentidad",unique = true)
     private String documentoIdentidad;
 
