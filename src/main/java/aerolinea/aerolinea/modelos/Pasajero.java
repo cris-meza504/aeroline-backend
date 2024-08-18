@@ -35,7 +35,7 @@ public class Pasajero {
     private String correo;
 
     @Column(name = "contraseña")
-    private String contranna;
+    private String password;
 
     private String telefono;
 
