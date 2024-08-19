@@ -34,13 +34,12 @@ public class Pasajero {
 
     private String correo;
 
-    @Column(name = "contraseña")
     private String password;
 
     private String telefono;
 
-    @Column(name = "documentoidentidad",unique = true)
-    private String documentoIdentidad;
+    @Column(name = "dni",unique = true)
+    private String dni;
 
     @JsonIgnore
     @ManyToMany(mappedBy="pasajeros")

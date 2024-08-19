@@ -1,5 +1,6 @@
 package aerolinea.aerolinea.modelos;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,7 +26,7 @@ public class Reserva {
     private long codigoReserva;
 
     @Column(name = "fechareserva")
-    private LocalDateTime fechaReserva;
+    private LocalDate fechaReserva;
 
     @Column(name = "numeroreserva",unique = true)
     private String numeroReserva;

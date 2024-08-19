@@ -1,5 +1,6 @@
 package aerolinea.aerolinea.modelos;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
@@ -28,7 +29,7 @@ public class Vuelo {
     private long codigoVuelo; 
 
     @Column(name = "numerovuelo")
-    private String nuemeroVuelo;
+    private String numeroVuelo;
 
     @Column(name = "estadovuelo")
     private String estadoVuelo;
@@ -40,10 +41,10 @@ public class Vuelo {
     private LocalTime horaLlegada;
 
     @Column(name = "fechasalida")
-    private LocalDateTime fechaSalida;
+    private LocalDate fechaSalida;
 
     @Column(name = "fechallegada")
-    private LocalDateTime fechaLlegada;
+    private LocalDate fechaLlegada;
 
     @Column(name = "origen")
     private String ciudadOrigen;
